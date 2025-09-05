@@ -16,11 +16,6 @@ load_dotenv() # for initializing env variables
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY")) # for configuring the api key
 
 
-#On the streamlit app, we had a left side wherein we will upload a pdf and on the right side will have a text bar wherein 
-#we wil give the prompt to get our output
-#function to read the pdf and get text from it
-#This function takes multiple PDF documents, reads through every page of each PDF, extracts the text from every page, 
-#concatenates all that text into one large string, and returns it.
 
 
 
@@ -34,12 +29,7 @@ def get_pdf_text(pdf_docs): # this function takes in a pdf doc
 
 
 
-#Function to split the text into chunks
 
-#The overlap helps retain context between chunks so important information isn't lost at the boundaries.
-#When you cut the book into chunks, sometimes important sentences or ideas start at the end of one chunk 
-#and continue in the next chunk. If you don’t include any overlapping text, the next chunk might miss the 
-#start of that idea — causing loss of context.
 
 #By overlapping, you include some text from the end of one chunk again at the start of the next chunk, so 
 #the transition is smooth and the model keeps the connection between chunks.
