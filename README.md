@@ -1,7 +1,7 @@
-# DocuChat AI – Interactive PDF Q&A Assistant
+# IntelliDocs-AI 
 
 **Description**  
-DocuChat AI is a Streamlit web application that enables users to upload PDF documents and interactively ask questions about their content using Google Gemini's large language model (LLM) with semantic search powered by FAISS vector embeddings and Langchain.
+
 
 ---
 
