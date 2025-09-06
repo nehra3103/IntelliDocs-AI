@@ -20,12 +20,14 @@ So, instead of going through lengthy files, users can directly ask questions, an
 
 ## Tech Stack
 
--Frontend & UI: Streamlit
--Backend & Processing: Python
--AI/LLM Framework: LangChain
--Vector Database: FAISS
--LLM Provider: Google Generative AI (gemini-pro)
--Document Parsing: PyPDF2
+### Tech Stack
+- **Frontend & UI**: Streamlit  
+- **Backend & Processing**: Python  
+- **AI/LLM Framework**: LangChain  
+- **Vector Database**: FAISS  
+- **LLM Provider**: Google Generative AI (gemini-pro)  
+- **Document Parsing**: PyPDF2  
+
 
 ---
 
