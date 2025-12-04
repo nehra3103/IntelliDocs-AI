@@ -35,7 +35,7 @@ So, instead of going through lengthy files, users can directly ask questions, an
 
 ## Architecture Diagram
 
-
+<img width="1600" height="704" alt="image" src="https://github.com/user-attachments/assets/fcf963dc-bc4a-469b-8fb0-2ea0210f395a" />
 
 
 ---
