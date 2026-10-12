@@ -1,0 +1,40 @@
+# Paper & ink: warm neutrals with a single clay accent.
+
+[theme]
+font = "Instrument Sans:https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap"
+headingFont = "Instrument Serif:https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap"
+headingFontWeights = 400
+headingFontSizes = ["3rem", "2rem", "1.5rem", "1.25rem"]
+baseRadius = "0.375rem"
+buttonRadius = "0.375rem"
+showWidgetBorder = true
+showSidebarBorder = true
+
+[theme.light]
+primaryColor = "#B4532A"
+backgroundColor = "#FBFAF7"
+secondaryBackgroundColor = "#F2EFE9"
+textColor = "#1F1D1A"
+borderColor = "#E4DFD6"
+linkColor = "#B4532A"
+codeBackgroundColor = "#F2EFE9"
+
+[theme.light.sidebar]
+backgroundColor = "#F5F3EE"
+secondaryBackgroundColor = "#ECE8E0"
+
+[theme.dark]
+primaryColor = "#D98A5F"
+backgroundColor = "#161513"
+secondaryBackgroundColor = "#211F1C"
+textColor = "#ECE8E1"
+borderColor = "#302D29"
+linkColor = "#D98A5F"
+codeBackgroundColor = "#211F1C"
+
+[theme.dark.sidebar]
+backgroundColor = "#1B1A17"
+secondaryBackgroundColor = "#262420"
+
+[client]
+toolbarMode = "minimal"

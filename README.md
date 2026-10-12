@@ -8,10 +8,13 @@ So, instead of going through lengthy files, users can directly ask questions, an
 
 ## Features
 
-- Extract text from one or more PDF documents.
-- Ask questions in natural language and receive accurate, context-grounded responses.
+- **Chat interface**: ask follow-up questions in a conversation, with answers streamed as they're written.
+- **Source citations**: every answer shows which file and page it came from, with an excerpt.
+- **Multiple PDFs**: upload several documents and query them together.
+- **Suggested questions** to get started quickly, plus one-click *Clear chat* and *Start over*.
+- **Clean, modern theme** with automatic light and dark mode.
+- **Helpful errors** for a missing API key, scanned PDFs without selectable text, and API failures.
 - Semantic search across document segments using a FAISS vector store.
-- Safe management of API keys through a `.env` file.
 - Built with Google's Gemini models for both embeddings and chat.
 
 ---
@@ -22,7 +25,7 @@ So, instead of going through lengthy files, users can directly ask questions, an
 - **Backend & Processing**: Python 3.10+
 - **AI/LLM Framework**: LangChain 1.x (`langchain-core`, `langchain-community`, `langchain-text-splitters`)
 - **Vector Database**: FAISS
-- **LLM Provider**: Google Gemini (`gemini-flash-latest` for chat, `gemini-embedding-001` for embeddings)
+- **LLM Provider**: Google Gemini (`gemini-flash-lite-latest` for chat, `gemini-embedding-001` for embeddings)
 - **Document Parsing**: PyPDF2
 
 ---
@@ -72,15 +75,20 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 ## Usage
 
 1. Upload one or more PDF files from the sidebar.
-2. Click **Submit & Process**. The text is extracted, split into chunks, embedded, and stored in a local FAISS index (`faiss_index/`).
-3. Type a question in the main input box. The most relevant chunks are retrieved and sent to Gemini, which answers using only the document's content.
+2. Click **Process documents**. The text is extracted page by page, split into chunks, embedded, and stored in an in-memory FAISS index for your session.
+3. Ask a question in the chat box, or pick a suggested one. The most relevant chunks are retrieved and sent to Gemini, which answers using only the documents' content.
+4. Expand **Sources** under any answer to see the file, page and excerpt it was based on.
+
+Documents are kept only for your browser session. Refreshing the page or clicking **Start over** clears them.
 
 ---
 
 ## Configuration Notes
 
-- **Chat model**: `gemini-flash-latest` is used by default because it works on Gemini's free tier. If billing is enabled on your Google AI account, you can switch to a Pro model (for example `gemini-pro-latest`) in `get_conversational_chain()` in `app.py`.
-- **Embedding model**: `models/gemini-embedding-001`. If you change it, delete `faiss_index/` and re-process your PDFs, since indexes built with different embedding models aren't compatible.
+- **Chat model**: `gemini-flash-lite-latest` is used by default because it is fast (answers usually start within a few seconds). Free-tier keys have a daily request limit per model; see [ai.dev/rate-limit](https://ai.dev/rate-limit). If billing is enabled on your Google AI account, you can switch to a Pro model (for example `gemini-pro-latest`) by changing `CHAT_MODEL` in `app.py`.
+- **Embedding model**: `models/gemini-embedding-001`.
+- Both model names are set at the top of `app.py` (`CHAT_MODEL`, `EMBEDDING_MODEL`).
+- **Theme**: colors, font and corner radius live in `.streamlit/config.toml`.
 
 ---
 
