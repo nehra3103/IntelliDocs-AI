@@ -5,3 +5,5 @@ langchain # framework for llm based app development
 PyPDF2 # for reading pdfs
 faiss-cpu # for vector embeddings
 langchain_google_genai # for accessing google gen ai apis using langchain
+langchain-community # for FAISS vector store integration
+langchain-text-splitters # for splitting text into chunks

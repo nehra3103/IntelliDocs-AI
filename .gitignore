@@ -48,3 +48,7 @@ Thumbs.db
 
 # VS Code settings
 .vscode/
+
+# Generated FAISS index and app logs
+faiss_index/
+streamlit.log
